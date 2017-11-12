@@ -1,0 +1,228 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+h1 {
+	font-size: 20px;
+	font-weight: bold;
+}
+h6 {
+	font-size: 16px;
+}
+
+.main-container {
+	background: #fff;
+	height: 800px;
+	width: 80%;
+	margin: 0px auto;
+	margin-top: 100px;
+	opacity: 0.90;
+	border-radius: 25px;
+	border: solid 5px #2c3e50;
+    
+}
+
+.navigation {
+	position: relative;
+	width: 100%;
+}
+
+.bg-login {
+	background: #2c3e50;
+	height: 400px;
+	width: 500px;
+	margin: 0px auto;
+	margin-top: 15%;
+	border-radius: 10px;
+	opacity: 0.8;
+}
+
+.bg-login-container {
+	padding-top: 12%;
+}
+
+form.login-form {
+	width: 400px;
+	margin: 0px auto;
+	position: relative;
+}
+
+.login-logo {
+	text-align:center;
+}
+
+.login-logo img {
+	
+	width:300px;
+	height:150px;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255,255,255,1.00);
+}
+::-moz-placeholder { /* Firefox 19+ */
+   color: rgba(255,255,255,1.00);
+}
+:-ms-input-placeholder { /* IE 10+ */
+   color: rgba(255,255,255,1.00);
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: rgba(255,255,255,1.00);
+}
+
+.wrapper {
+	min-height: 100%;
+	width: 100%;
+	height: 100%;
+	margin: 0px auto;
+	position: relative;
+	border-radius:20px;
+		opacity: 0.80;
+}
+
+.wrapper h1 {
+	text-align:center;
+	font-size:2em;
+	text-transform:uppercase;
+}
+
+.required-color {
+	color: red;
+}
+
+
+.wrapper-white {
+	background:#fff;
+
+}
+
+.errspan {
+    float: right;
+    margin-right: 25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+}
+
+.invisible-display {
+	display: none;
+}
+
+.display {
+	display:block;
+}
+
+/* My Spacing */
+
+.space-10 {
+	height: 10px;
+}
+.space-20 {
+	height: 20px;
+}
+.space-30 {
+	height: 30px;
+}
+.space-40 {
+	height: 40px;
+}
+.space-50 {
+	height: 50px;
+}
+.space-60 {
+	height: 60px;
+}
+.space-70 {
+	height: 70px;
+}
+.space-80 {
+	height: 80px;
+}
+.space-90 {
+	height: 90px;
+}
+.space-100 {
+	height: 100px;
+}
+
+/* Separator */
+
+/* Modal Sizes */
+
+#myModal .modal-dialog  {width:100%;}
+
+#myModal2 .modal-dialog  {width:100%;}
+
+/* Modal Sizes */
+
+/* Modal Sizes */
+.tabulation{
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.tabulation .row{
+}
+
+.row .item{
+    margin-bottom: 10px;
+    padding: 10px 0;
+    background: #95a5a6;
+}
+
+.row .item .t-item{
+    background: #34495e;
+    color: #ffffff;
+    margin-bottom: 2px;
+}
+
+.item.bg-white{
+    background: #ffffff;
+}
+
+.row .item h1{
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 900;
+    color: #008000;
+}
+
+.row .item.current h1{
+    color: #ffffff;
+} 
+.row .item .t-type.title h5,
+.row .item .c-number.title h5,
+.row .item .t-number.title h5{
+    font-size: 20px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.row .item .t-type h5,
+.row .item .c-number h5,
+.row .item .t-number h5{
+    font-size: 20px;
+    margin:0;
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
