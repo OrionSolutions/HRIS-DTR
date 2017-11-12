@@ -1,16 +1,14 @@
 <?php
 include "../includes/config.php";
+error_reporting(0);
 $data=array();
 $tables = $_GET["tables"];
 $id=$_GET["id"];
 $index=$_GET["index"];
 switch ($tables) {
-case "tblaccount":
-$q=mysqli_query($con,"SELECT * FROM `tblaccount`
-INNER JOIN `tbldepartment` ON `tbldepartment`.`DepartmentID`=`tblaccount`.`DepartmentID`
-INNER JOIN `tbloccupation` ON `tbloccupation`.`OccupationID`=`tblaccount`.`OccupationID`
-INNER JOIN `tblsubjectarea` ON `tblsubjectarea`.`SubjectID` = `tblsubjectarea`.`SubjectID`
-WHERE `tblaccount`.`AccountID`=".$id." GROUP BY `tblaccount`.`AccountID` DESC");	
+case "tblemployee":
+$q=mysqli_query($con,"SELECT * FROM tblemployee
+WHERE `tblemployee`.`EmployeeID`=".$id." GROUP BY `tblemployee`.`EmployeeID` DESC");	
 break;
 
 case "tblvalidationdetails":

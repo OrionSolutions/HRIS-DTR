@@ -9,4 +9,10 @@ include('sessionuser.php');
 	$SQLPos="SELECT * FROM tblposition ORDER BY PositionID ASC";
 	$GetPosition=$con->getrecords($SQLPos);
 
+	$SQL_Dep="SELECT * FROM tbldepartment ORDER BY DepartmentID ASC";
+	$GetDepartment=$con->getrecords($SQL_Dep);
+
+	$GetPosition2=$con->getrecords($SQLPos);
+	$GetDepartment2=$con->getrecords($SQL_Dep);
+
 error_reporting(E_ERROR | E_PARSE);?>

@@ -1,28 +1,32 @@
 $( document ).on( "click", ".open-Profile", function () {
-			var AccountID = $( this ).data( 'id' );
-			var url = "jsonobject/json.php?tables=tblaccount&&id=" + AccountID;
+			var id = $( this ).data( 'id' );
+			var url = "jsonobject/json.php?tables=tblemployee&&id=" + id;
 			$.getJSON( url, function ( result ) {
 				console.log( result );
 				$.each( result, function ( i, field ) {
-					var AccountID = field.AccountID;
+					var EmployeeCode = field.EmployeeCode;
 					var Lastname = field.Lastname;
 					var Firstname = field.Firstname;
-					var EmailAdd = field.EmailAdd;
-					var MobileNumber = field.MobileNumber;
-					var Gender = field.Gender;
+					var Middlename = field.Middlename;
+					var CivilStatus = field.CivilStatus;
+					var MobileNumber = field.ContactNumber;
+					var Birthdate = field.Birthdate;
 					var Address = field.Address;
-					var Username = field.Username;
-					var Password = field.Password;
-					var UserType = field.UserType;
-					$( "#txtaccountid" ).val( AccountID );
+					var Gender = field.Gender;
+					var PositionID = field.PositionID;
+					var Department = field.DepartmentID;
+					$("#txtaccountid").val(id);
+					$( "#txtemployeecode" ).val( EmployeeCode );
 					$( "#txtlastname" ).val( Lastname );
 					$( "#txtfirstname" ).val( Firstname );
-					$( "#txtemail" ).val( EmailAdd );
+					$( "#txtmiddlename" ).val( Middlename );
+					$( "#cbocivilstatus" ).val( CivilStatus );
 					$( "#txtmobilenumber" ).val( MobileNumber );
-					$( "#txtaddress" ).val( Address );
-					$( "#txtusername" ).val( Username );
-					$("#cbogender").val(Gender);
-					$("#cbousertype").val(UserType);
+					$( "#txtbirthdate" ).val( Birthdate );
+					$("#txtaddress").val(Address);
+					$("#cbogender").val(Gender).attr('selected','selected');
+					$("#cboposition").val(PositionID).attr('selected','selected');
+					$("#cbodepartment").val(Department).attr('selected','selected');;
 				} );
 			} );
 
@@ -35,23 +39,22 @@ $( document ).on( "click", ".open-Profile", function () {
 		
 		
 			$( document ).on( "click", ".close-Profile", function () {
-			var AccountID = $( this ).data( 'id' );
+			var id = $( this ).data( 'id' );
 				
 				
-				var myData = 'txtaccountid=' + encodeURIComponent(AccountID);
+				var myData = 'txtaccountid=' + encodeURIComponent(id);
 				jQuery.ajax( {
 					type: "POST",
-					url: "response/user-module.php?TypeID=DeleteData",
+					url: "response/employee.php?TypeID=DeleteData",
 					dataType: "text",
 					data: myData,
 					success: function ( response ) {
-				
 						setTimeout( function () {
 								DeleteMessage();
 						}, 10 );
 					
 							setTimeout( function () {
-							window.location.href='user-module.php';
+							window.location.href='employee.php';
 						}, 1500 );
 						
 							
@@ -99,19 +102,22 @@ $( document ).on( "click", ".open-Profile", function () {
 
 			function UpdateAccount() {
 				
-				var myData = 'txtlastname=' + encodeURIComponent( $( "#txtlastname" ).val() ) +
+				var myData = 'txtemployeecode=' + encodeURIComponent( $( "#txtemployeecode" ).val() ) +
+					'&txtlastname=' + encodeURIComponent( $( "#txtlastname" ).val() ) +
 					'&txtfirstname=' + encodeURIComponent( $( "#txtfirstname" ).val() ) +
-					'&txtemail=' + encodeURIComponent( $( "#txtemail" ).val() ) +
+					'&txtmiddlename=' + encodeURIComponent( $( "#txtmiddlename" ).val() ) +
+					'&cbocivilstatus=' + encodeURIComponent( $( "#cbocivilstatus" ).val() ) +
 					'&txtmobilenumber=' + encodeURIComponent( $( "#txtmobilenumber" ).val() ) +
+					'&txtbirthdate=' + encodeURIComponent( $( "#txtbirthdate" ).val() ) +
 					'&txtaddress=' + encodeURIComponent( $( "#txtaddress" ).val() ) +
 					'&cbogender=' + encodeURIComponent( $( "#cbogender" ).val() ) +
-					'&cbousertype=' + encodeURIComponent( $( "#cbousertype" ).val() ) +
-					'&txtusername=' + encodeURIComponent( $( "#txtusername" ).val() ) +
+					'&cboposition=' + encodeURIComponent( $( "#cboposition" ).val() ) +
 					'&txtaccountid=' + encodeURIComponent( $( "#txtaccountid" ).val() ) +
-					'&txtpassword=' + encodeURIComponent( $( "#txtpassword" ).val() );
+					'&cbodepartment=' + encodeURIComponent( $( "#cbodepartment" ).val() );
+				
 				jQuery.ajax( {
 					type: "POST",
-					url: "response/user-module.php?TypeID=UpdateData",
+					url: "response/employee.php?TypeID=UpdateData",
 					dataType: "text",
 					data: myData,
 					success: function ( response ) {
@@ -120,8 +126,10 @@ $( document ).on( "click", ".open-Profile", function () {
 						}, 10 );
 					
 							setTimeout( function () {
-							window.location.href='user-module.php';
+							window.location.href='employee.php';
 						}, 1500 );
+
+						//$("#test").html(response);
 						
 							
 					},
@@ -138,7 +146,7 @@ $( document ).on( "click", ".open-Profile", function () {
 
 
 		$( '#saveform' ).submit( function ( event ) {
-				SaveAccount();
+			SaveAccount();
 
 				event.preventDefault();
 			} );
@@ -156,18 +164,20 @@ $( document ).on( "click", ".open-Profile", function () {
 
 			function SaveAccount() {
 				
-				var myData = 'txtlastname=' + encodeURIComponent( $( "#txtlastname2" ).val() ) +
-					'&txtfirstname=' + encodeURIComponent( $( "#txtfirstname2" ).val() ) +
-					'&txtemail=' + encodeURIComponent( $( "#txtemail2" ).val() ) +
-					'&txtmobilenumber=' + encodeURIComponent( $( "#txtmobilenumber2" ).val() ) +
-					'&txtaddress=' + encodeURIComponent( $( "#txtaddress2" ).val() ) +
-					'&cbogender=' + encodeURIComponent( $( "#cbogender2" ).val() ) +
-					'&cbousertype=' + encodeURIComponent( $( "#cbousertype2" ).val() ) +
-					'&txtusername=' + encodeURIComponent( $( "#txtusername2" ).val() ) +
-					'&txtpassword=' + encodeURIComponent( $( "#txtpassword2" ).val() );
+				var myData = 'txtemployeecode2=' + encodeURIComponent( $( "#txtemployeecode2" ).val() ) +
+				'&txtlastname2=' + encodeURIComponent( $( "#txtlastname2" ).val() ) +
+				'&txtfirstname2=' + encodeURIComponent( $( "#txtfirstname2" ).val() ) +
+				'&txtmiddlename2=' + encodeURIComponent( $( "#txtmiddlename2" ).val() ) +
+				'&cbocivilstatus2=' + encodeURIComponent( $( "#cbocivilstatus2" ).val() ) +
+				'&txtmobilenumber2=' + encodeURIComponent( $( "#txtmobilenumber2" ).val() ) +
+				'&txtbirthdate2=' + encodeURIComponent( $( "#txtbirthdate2" ).val() ) +
+				'&txtaddress2=' + encodeURIComponent( $( "#txtaddress2" ).val() ) +
+				'&cbogender2=' + encodeURIComponent( $( "#cbogender2" ).val() ) +
+				'&cboposition2=' + encodeURIComponent( $( "#cboposition2" ).val() ) +
+				'&cbodepartment2=' + encodeURIComponent( $( "#cbodepartment2" ).val() );
 				jQuery.ajax( {
 					type: "POST",
-					url: "response/user-module.php?TypeID=SaveData",
+					url: "response/employee.php?TypeID=SaveData",
 					dataType: "text",
 					data: myData,
 					success: function ( response ) {
@@ -176,7 +186,7 @@ $( document ).on( "click", ".open-Profile", function () {
 						}, 10 );
 					
 							setTimeout( function () {
-							window.location.href='user-module.php';
+							window.location.href='employee.php';
 						}, 1500 );
 						
 							

@@ -100,13 +100,9 @@
 								</th>
 								<th>Address :&nbsp;<a ng-click="sort_by('Address');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>Email Add # :&nbsp;<a ng-click="sort_by('EmailAdd');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>Mobile Number :&nbsp;<a ng-click="sort_by('MobileNumber');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Mobile Number :&nbsp;<a ng-click="sort_by('ContactNumber');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
 								<th>Gender :&nbsp;<a ng-click="sort_by('Gender');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>User Type :&nbsp;<a ng-click="sort_by('UserType');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
 								<th>Action
 								</th>
@@ -117,12 +113,10 @@
 									<td>{{data.Lastname}}</td>
 									<td>{{data.Firstname}}</td>
 									<td>{{data.Address}}</td>
-									<td>{{data.EmailAdd}}</td>
-									<td>{{data.MobileNumber}}</td>
+									<td>{{data.ContactNumber}}</td>
 									<td>{{data.Gender}}</td>
-									<td>{{data.UserType}}</td>
-									<td><a type="button" data-toggle="modal" data-target="#myModal" data-id="{{data.AccountID}}" href="#open-Profile" class="open-Profile sub btn btn-primary btn-block" name="btnEdit">Edit <span class="glyphicon glyphicon-pencil"></span></a>
-									<a type="button" data-id="{{data.AccountID}}" href="#close-Profile" class="close-Profile sub btn btn-warning btn-block" name="btnEdit">Delete <span class="glyphicon glyphicon-alert"></span></a>
+									<td><a type="button" data-toggle="modal" data-target="#myModal" data-id="{{data.EmployeeID}}" href="#open-Profile" class="open-Profile sub btn btn-primary btn-block" name="btnEdit">Edit <span class="glyphicon glyphicon-pencil"></span></a>
+									<a type="button" data-id="{{data.EmployeeID}}" href="#close-Profile" class="close-Profile sub btn btn-warning btn-block" name="btnEdit">Delete <span class="glyphicon glyphicon-alert"></span></a>
 									</td>
 								</tr>
 							</tbody>
@@ -146,10 +140,6 @@
 
 
 
-
-
-
-
     <!-- Modal Update -->
 	<div id="myModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
@@ -166,56 +156,84 @@
 					<div class="space-20"></div>
 					<div class="container">
 						<form id="updateform">
-							<div class="col-lg-6">
-								<div class="space-10"></div>
-								<input type="text" class="form-control" placeHolder="Lastname" id="txtlastname" name="txtlastname" required><span class="fa fa-info-circle errspan"></span>
-							</div>
-							<div class="col-lg-6">
-								<div class="space-10"></div>
-								<input type="text" class="form-control" placeHolder="Firstname" id="txtfirstname" name="txtfirstname" required><span class="fa fa-info-circle errspan"></span>
-							</div>
-							<div class="col-lg-6">
-								<div class="space-10"></div>
-								<input type="email" class="form-control" placeHolder="Email Address" id="txtemail" name="txtemail">
-							</div>
-							<div class="col-lg-6">
-								<div class="space-10"></div>
-								<input type="number" class="form-control" placeHolder="Mobile Number" id="txtmobilenumber" name="txtmobilenumber" required><span class="fa fa-info-circle errspan"></span>
-							</div>
-							<div class="col-lg-12">
-								<div class="space-10"></div>
-								<input type="text" class="form-control" placeHolder="Address" id="txtaddress" name="txtaddress" required><span class="fa fa-info-circle errspan"></span>
-							</div>
-							
-							<div class="col-lg-12">
-								<div class="space-10"></div>
-								<select class="form-control" id="cbogender" name="cbogender" required>
-									<option value="">[Select Gender]</option>
-									<option value="MALE">MALE</option>
-									<option value="FEMALE">FEMALE</option>
-								</select><span class="fa fa-info-circle errspan"></span>
-							</div>
-							<div class="col-lg-12">
-								<div class="space-10"></div>
-								<select class="form-control" id="cbousertype" name="cbousertype" required>
-									<option value="">[Select User Type]</option>
-									<option value="User">User</option>
-									<option value="Cashier">Cashier</option>
-									<option value="Registrar">Registrar</option>
-								</select><span class="fa fa-info-circle errspan"></span>
-							</div>
+						<div class="col-lg-12">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Employee Code" id="txtemployeecode" name="txtemployeecode" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Lastname" id="txtlastname" name="txtlastname" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Firstname" id="txtfirstname" name="txtfirstname" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Middle Name" id="txtmiddlename" name="txtmiddlename" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+
+
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<select class="form-control" id="cbocivilstatus" name="cbocivilstatus" required>
+							<option value="">[Select Civil Status]</option>
+							<option value="Single">Single</option>
+							<option value="Married">Married</option>
+						</select><span class="fa fa-info-circle errspan"></span>
+					</div>
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<input type="number" class="form-control" placeHolder="Mobile Number" id="txtmobilenumber" name="txtmobilenumber" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+					<div class="col-lg-4">
+						<div class="space-10"></div>
+						<input type="date" class="form-control" placeHolder="Birth Date" id="txtbirthdate" name="txtbirthdate" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Address" id="txtaddress" name="txtaddress" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+					
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<select class="form-control" id="cbogender" name="cbogender" required>
+							<option value="">[Select Gender]</option>
+							<option value="Male">MALE</option>
+							<option value="Female">FEMALE</option>
+						</select><span class="fa fa-info-circle errspan"></span>
+					</div>
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<select class="form-control" id="cboposition" name="cboposition" required>
+							<option value="">[Select Position]</option>
+							<?php while($RS=mysqli_fetch_assoc($GetPosition2)) {?>
+							<option value="<?php echo $RS['PositionID'];?>">
+							<?php echo  $RS['PositionTitle']; ?>
+							</option>
+							<?php } ?>
+						</select><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<select class="form-control" id="cbodepartment" name="cbodepartment" required>
+							<option value="">[Select Department]</option>
+							<?php while($RS=mysqli_fetch_assoc($GetDepartment2)) {?>
+							<option value="<?php echo $RS['DepartmentID'];?>">
+							<?php echo  $RS['DepartmentName']; ?>
+							</option>
+							<?php } ?>
+						</select><span class="fa fa-info-circle errspan"></span>
+					</div>
 
 							<div id="mydisplay" class="display">
 							
-								<div class="col-lg-6">
-									<div class="space-10"></div>
-									<input type="text" class="form-control" placeHolder="Username" id="txtusername" name="txtusername">
-								</div>
-								<div class="col-lg-6">
-									<div class="space-10"></div>
-									<input type="password" class="form-control" placeHolder="Password" id="txtpassword" name="txtpassword">
-								</div>
-
 							</div>
 
 							<div class="col-lg-9">
@@ -232,14 +250,11 @@
 					</div>
 
 
-
-
-
-
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
+				<p id="test"></p>
 			</div>
 		</div>
 	</div>
@@ -258,31 +273,51 @@
 					<h4 class="modal-title">Add New Employee</h4>
 				</div>
 				<div class="modal-body">
-
-
-
-
 					<div class="space-20"></div>
 
 					<div class="space-20"></div>
 					<div class="container">
 						<form id="saveform">
-							<div class="col-lg-6">
+						
+							<div class="col-lg-12">
+								<div class="space-10"></div>
+								<input type="text" class="form-control" placeHolder="Employee Code" id="txtemployeecode2" name="txtemployeecode2" required><span class="fa fa-info-circle errspan"></span>
+							</div>
+
+							<div class="col-lg-4">
 								<div class="space-10"></div>
 								<input type="text" class="form-control" placeHolder="Lastname" id="txtlastname2" name="txtlastname2" required><span class="fa fa-info-circle errspan"></span>
 							</div>
-							<div class="col-lg-6">
+
+							<div class="col-lg-4">
 								<div class="space-10"></div>
 								<input type="text" class="form-control" placeHolder="Firstname" id="txtfirstname2" name="txtfirstname2" required><span class="fa fa-info-circle errspan"></span>
 							</div>
-							<div class="col-lg-6">
+							<div class="col-lg-4">
 								<div class="space-10"></div>
-								<input type="email" class="form-control" placeHolder="Email Address" id="txtemail2" name="txtemail2">
+								<input type="text" class="form-control" placeHolder="Middle Name" id="txtmiddlename2" name="txtmiddlename2" required><span class="fa fa-info-circle errspan"></span>
 							</div>
-							<div class="col-lg-6">
+
+
+
+							<div class="col-lg-4">
+								<div class="space-10"></div>
+								<select class="form-control" id="cbocivilstatus2" name="cbocivilstatus2" required>
+									<option value="">[Select Civil Status]</option>
+									<option value="Single">Single</option>
+									<option value="Married">Married</option>
+								</select><span class="fa fa-info-circle errspan"></span>
+							</div>
+							<div class="col-lg-4">
 								<div class="space-10"></div>
 								<input type="number" class="form-control" placeHolder="Mobile Number" id="txtmobilenumber2" name="txtmobilenumber2" required><span class="fa fa-info-circle errspan"></span>
 							</div>
+							<div class="col-lg-4">
+								<div class="space-10"></div>
+								<input type="date" class="form-control" placeHolder="Birth Date" id="txtbirthdate2" name="txtbirthdate2" required><span class="fa fa-info-circle errspan"></span>
+							</div>
+
+
 							<div class="col-lg-12">
 								<div class="space-10"></div>
 								<input type="text" class="form-control" placeHolder="Address" id="txtaddress2" name="txtaddress2" required><span class="fa fa-info-circle errspan"></span>
@@ -308,17 +343,20 @@
 								</select><span class="fa fa-info-circle errspan"></span>
 							</div>
 
-							<div id="mydisplay" class="display">
-							
-								<div class="col-lg-6">
-									<div class="space-10"></div>
-									<input type="text" class="form-control" placeHolder="Username" id="txtusername2" name="txtusername2">
-								</div>
-								<div class="col-lg-6">
-									<div class="space-10"></div>
-									<input type="password" class="form-control" placeHolder="Password" id="txtpassword2" name="txtpassword2">
-								</div>
+							<div class="col-lg-12">
+								<div class="space-10"></div>
+								<select class="form-control" id="cbodepartment2" name="cbodepartment2" required>
+									<option value="">[Select Department]</option>
+                                    <?php while($RS=mysqli_fetch_assoc($GetDepartment)) {?>
+							        <option value="<?php echo $RS['DepartmentID'];?>">
+								    <?php echo  $RS['DepartmentName']; ?>
+							        </option>
+							        <?php } ?>
+								</select><span class="fa fa-info-circle errspan"></span>
+							</div>
 
+							<div id="mydisplay" class="display">
+						
 							</div>
 
 							<div class="col-lg-9">

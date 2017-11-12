@@ -4,8 +4,8 @@
   <link rel="stylesheet" type="text/css" href="css/sweetalert.css">
   <link href="css/reset.css" rel="stylesheet">
 	<link href="css/grid.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="css/font-awsome/css/font-awesome.css">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<!--  <link rel="stylesheet" type="text/css" href="css/font-awsome/css/font-awesome.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> -->
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
