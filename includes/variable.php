@@ -1,6 +1,6 @@
 <?php
-$title="HRIS DTR - Human Resources Information System Daily Time Record";
-$keywords = "HRIS DTR - Human Resources Information System Daily Time Record";
+$title="Z.C Integrated Port Services INC. HRIS System Dashboard";
+$keywords = "Z.C Integrated Port Services INC. HRIS System Dashboard";
 $hostname = 'localhost';
 $username = 'root';
 $password = '1234';
