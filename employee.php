@@ -232,6 +232,19 @@
 						</select><span class="fa fa-info-circle errspan"></span>
 					</div>
 
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<select class="form-control" id="cbotime" name="cbotime" required>
+							<option value="">[Select Time]</option>
+							<?php while($RS=mysqli_fetch_assoc($GetTime)) {?>
+							<option value="<?php echo $RS['TimeID'];?>">
+							<?php echo "Morning In: ". $RS['MorningIn'] . " - " . "Afternoon Out: " .$RS['AfternoonOut']; ?> |
+							<?php echo "Afternoon In : ". $RS['AfternoonIn'] . " - " . "Morning Out: " .$RS['MorningOut']; ?>
+							</option>
+							<?php } ?>
+						</select><span class="fa fa-info-circle errspan"></span>
+					</div>
+
 							<div id="mydisplay" class="display">
 							
 							</div>
@@ -327,8 +340,8 @@
 								<div class="space-10"></div>
 								<select class="form-control" id="cbogender2" name="cbogender2" required>
 									<option value="">[Select Gender]</option>
-									<option value="MALE">MALE</option>
-									<option value="FEMALE">FEMALE</option>
+									<option value="Male">MALE</option>
+									<option value="Female">FEMALE</option>
 								</select><span class="fa fa-info-circle errspan"></span>
 							</div>
 							<div class="col-lg-12">
@@ -355,6 +368,18 @@
 								</select><span class="fa fa-info-circle errspan"></span>
 							</div>
 
+							<div class="col-lg-12">
+								<div class="space-10"></div>
+								<select class="form-control" id="cbotime2" name="cbotime2" required>
+									<option value="">[Select Time]</option>
+                                    <?php while($RS=mysqli_fetch_assoc($GetTime)) {?>
+							        <option value="<?php echo $RS['TimeID'];?>">
+								   	<?php echo "Morning In: ". $RS['MorningIn'] . " - " . "Afternoon Out: " .$RS['AfternoonOut']; ?> |
+									<?php echo "Afternoon In : ". $RS['AfternoonIn'] . " - " . "Morning Out: " .$RS['MorningOut']; ?>
+							        </option>
+							        <?php } ?>
+								</select><span class="fa fa-info-circle errspan"></span>
+							</div>
 							<div id="mydisplay" class="display">
 						
 							</div>

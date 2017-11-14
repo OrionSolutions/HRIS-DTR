@@ -68,9 +68,10 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$txtaddress= filter_var($_POST["txtaddress2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbogender = filter_var($_POST["cbogender2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cboposition= filter_var($_POST["cboposition2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
+	$cbotime= filter_var($_POST["cbotime2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbodepartment = filter_var($_POST["cbodepartment2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
 
-    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`DepartmentID`)";
+    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`TimeID`,`DepartmentID`)";
 	$SQLInsert = $SQLInsert." VALUES('".$txtemployeecode2."',";
 	$SQLInsert = $SQLInsert."'".$txtlastname."',";
 	$SQLInsert = $SQLInsert."'".$txtfirstname."',";
@@ -81,8 +82,8 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$SQLInsert = $SQLInsert."'".$txtaddress."',";	
 	$SQLInsert = $SQLInsert."'".$cbogender."',";	
 	$SQLInsert = $SQLInsert."'".$cboposition."',";		
+	$SQLInsert = $SQLInsert."'".$cbotime."',";
 	$SQLInsert = $SQLInsert."'".$cbodepartment."');";
-
 	$RSInsert=$con->getrecords($SQLInsert);
 }else{
 		header('HTTP/1.1 500 Error!');

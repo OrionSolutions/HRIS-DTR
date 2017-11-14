@@ -6,9 +6,20 @@ $tables = $_GET["tables"];
 $id=$_GET["id"];
 $index=$_GET["index"];
 switch ($tables) {
+
 case "tblemployee":
 $q=mysqli_query($con,"SELECT * FROM tblemployee
 WHERE `tblemployee`.`EmployeeID`=".$id." GROUP BY `tblemployee`.`EmployeeID` DESC");	
+break;
+
+case "tbldepartment":
+$q=mysqli_query($con,"SELECT * FROM tbldepartment
+WHERE `tbldepartment`.`DepartmentID`=".$id." GROUP BY `tbldepartment`.`DepartmentID` DESC");	
+break;
+
+case "tblposition":
+$q=mysqli_query($con,"SELECT * FROM tblposition
+WHERE `tblposition`.`PositionID`=".$id." GROUP BY `tblposition`.`PositionID` DESC");	
 break;
 
 case "tblvalidationdetails":

@@ -11,9 +11,6 @@ include('sessionuser.php');
 
 	$SQL_Dep="SELECT * FROM tbldepartment ORDER BY DepartmentID ASC";
 	$GetDepartment=$con->getrecords($SQL_Dep);
-	
-	$SQL_Time="SELECT * FROM tbltimeconfiguration ORDER BY TimeID ASC";
-	$GetTime=$con->getrecords($SQL_Time);
 
 	$GetPosition2=$con->getrecords($SQLPos);
 	$GetDepartment2=$con->getrecords($SQL_Dep);

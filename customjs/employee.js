@@ -14,6 +14,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					var Address = field.Address;
 					var Gender = field.Gender;
 					var PositionID = field.PositionID;
+					var TimeID = field.TimeID;
 					var Department = field.DepartmentID;
 					$("#txtaccountid").val(id);
 					$( "#txtemployeecode" ).val( EmployeeCode );
@@ -26,7 +27,8 @@ $( document ).on( "click", ".open-Profile", function () {
 					$("#txtaddress").val(Address);
 					$("#cbogender").val(Gender).attr('selected','selected');
 					$("#cboposition").val(PositionID).attr('selected','selected');
-					$("#cbodepartment").val(Department).attr('selected','selected');;
+					$("#cbodepartment").val(Department).attr('selected','selected');
+					$("#cbotime").val(TimeID).attr('selected','selected');;
 				} );
 			} );
 
@@ -174,6 +176,7 @@ $( document ).on( "click", ".open-Profile", function () {
 				'&txtaddress2=' + encodeURIComponent( $( "#txtaddress2" ).val() ) +
 				'&cbogender2=' + encodeURIComponent( $( "#cbogender2" ).val() ) +
 				'&cboposition2=' + encodeURIComponent( $( "#cboposition2" ).val() ) +
+				'&cbotime2=' + encodeURIComponent( $( "#cbotime2" ).val() ) +
 				'&cbodepartment2=' + encodeURIComponent( $( "#cbodepartment2" ).val() );
 				jQuery.ajax( {
 					type: "POST",
