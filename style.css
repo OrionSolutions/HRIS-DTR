@@ -210,6 +210,12 @@ form.login-form {
     font-weight: 100;
 }
 
+.time-placeholder{
+	position: absolute;
+	top:15px;
+	font-size: 16px;
+	right:50px;
+}
 
 
 

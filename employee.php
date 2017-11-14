@@ -344,6 +344,7 @@
 									<option value="Female">FEMALE</option>
 								</select><span class="fa fa-info-circle errspan"></span>
 							</div>
+							
 							<div class="col-lg-12">
 								<div class="space-10"></div>
 								<select class="form-control" id="cboposition2" name="cboposition2" required>

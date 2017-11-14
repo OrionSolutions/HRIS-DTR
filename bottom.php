@@ -37,3 +37,4 @@
 
     <!-- Demo Js -->
     <script src="js/demo.js"></script>
+    <script src="js/side-custom.js"></script>

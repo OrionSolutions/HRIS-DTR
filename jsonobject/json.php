@@ -12,6 +12,11 @@ $q=mysqli_query($con,"SELECT * FROM tblemployee
 WHERE `tblemployee`.`EmployeeID`=".$id." GROUP BY `tblemployee`.`EmployeeID` DESC");	
 break;
 
+case "tblaccount":
+$q=mysqli_query($con,"SELECT * FROM tblaccount
+WHERE `tblaccount`.`AccountID`=".$id." GROUP BY `tblaccount`.`AccountID` DESC");	
+break;
+
 case "tbldepartment":
 $q=mysqli_query($con,"SELECT * FROM tbldepartment
 WHERE `tbldepartment`.`DepartmentID`=".$id." GROUP BY `tbldepartment`.`DepartmentID` DESC");	
@@ -20,6 +25,11 @@ break;
 case "tblposition":
 $q=mysqli_query($con,"SELECT * FROM tblposition
 WHERE `tblposition`.`PositionID`=".$id." GROUP BY `tblposition`.`PositionID` DESC");	
+break;
+
+case "tbltimeconfiguration":
+$q=mysqli_query($con,"SELECT * FROM tbltimeconfiguration
+WHERE `tbltimeconfiguration`.`TimeID`=".$id." GROUP BY `tbltimeconfiguration`.`TimeID` DESC");	
 break;
 
 case "tblvalidationdetails":

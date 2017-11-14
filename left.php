@@ -23,7 +23,7 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="active">
-                        <a href="index.html">
+                        <a href="index.php">
                             <i class="material-icons">home</i>
                             <span>Dashboard</span>
                         </a>
@@ -35,9 +35,19 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
+                                <a href="employee.php">
                                     <span>Employees</span>
                                 </a>
+                                <a href="time.php">
+                                    <span>Time Configuration</span>
+                                </a>
+                                <a href="department.php">
+                                    <span>Department</span>
+                                </a>
+                                <a href="position.php">
+                                    <span>Position</span>
+                                </a>
+                                <!--
                                 <ul class="ml-menu">
                                     <li>
                                         <a href="#"> Basic </a>
@@ -48,7 +58,7 @@
                                     <li>
                                         <a href="#">No Header</a>
                                     </li>
-                                </ul>
+                                </ul>-->
                             </li>
                         </ul>
                     </li>
