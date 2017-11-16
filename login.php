@@ -1,4 +1,7 @@
-<?php include('data/login.php'); ?>
+<?php 
+ error_reporting(0);
+include('data/login.php');    
+?>
 <!DOCTYPE html>
 <html>
 

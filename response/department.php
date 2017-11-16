@@ -26,7 +26,7 @@ if(isset($_POST["txtdepartmentname"]) && strlen($_POST["txtdepartmentname"])>0)
     $UpdateSQL="UPDATE tbldepartment SET";
 	$UpdateSQL=$UpdateSQL."`DepartmentName`='".$txtdepartmentname."',";
 	$UpdateSQL=$UpdateSQL."`DepartmentDesc`='".$txtdepartmentdesc."'";
-	$UpdateSQL=$UpdateSQL." WHERE `DepartmentID`='".$DepartmentID."';";
+	$UpdateSQL=$UpdateSQL." WHERE `DepartmentID`='".$DepartmentID."';"; 
 $RSInsert=$con->getrecords($UpdateSQL);
 }else{
 		header('HTTP/1.1 500 Error!');

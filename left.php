@@ -91,10 +91,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="pages/changelogs.html">
-                            <i class="material-icons">update</i>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">settings</i>
                             <span>Settings</span>
                         </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="pages/ui/alerts.html">Profile</a>
+                                    <a href="pages/ui/alerts.html">Logout</a>
+                                </li>   
+                            </ul>
+                        
                     </li>
                     <li class="header">LABELS</li>
                     <li>
