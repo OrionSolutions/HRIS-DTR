@@ -147,14 +147,24 @@
 					<div class="space-20"></div>
 					<div class="container">
 						<form id="updateform">
-						<div class="col-lg-6">
-						<div class="space-10"></div>
+						<div class="col-lg-12">
+						<div class="space-20"></div>
 						<input type="text" class="form-control" placeHolder="Username" id="txtusername" name="txtusername" required><span class="fa fa-info-circle errspan"></span>
 					</div>
 
 					<div class="col-lg-6">
-						<div class="space-10"></div>
+						<div class="space-20"></div>
 						<input type="password" class="form-control" placeHolder="Password" id="txtpassword" name="txtpassword" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+					
+					<div class="col-lg-6">
+						<div class="space-20"></div>
+						<input type="password" class="form-control" placeHolder="Confirm Password" id="txtconfirmpassword" name="txtconfirmpassword" required><span class="fa fa-info-circle errspan"></span>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="space-10"></div>
+						<p id="mismatch"></p>
 					</div>
 
 					<div class="col-lg-12">

@@ -97,8 +97,8 @@
                         </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="pages/ui/alerts.html">Profile</a>
-                                    <a href="pages/ui/alerts.html">Logout</a>
+                                    <a href="account.php">Profile</a>
+                                    <a href="<?php echo $logoutAction ?>">Logout</a>
                                 </li>   
                             </ul>
                         

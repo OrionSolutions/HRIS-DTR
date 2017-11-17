@@ -10,6 +10,7 @@ $( document ).on( "click", ".open-Profile", function () {
             $("#accountid").val(id);
             $( "#txtusername" ).val( Username );
             $( "#txtpassword" ).val( Password );
+            $( "#txtconfirmpassword" ).val( Password );
             $( "#cbousertype" ).val( UserType );
         } );
     } );
@@ -62,9 +63,6 @@ function DeleteMessage() {
     
     }
 
-
-
-
         $( '#updateform' ).submit( function ( event ) {
             UpdateAccount();
 
@@ -83,7 +81,8 @@ function DeleteMessage() {
     }
 
     function UpdateAccount() {
-        
+        if($("#txtpassword").val() == $("#txtconfirmpassword").val()){
+            
         var myData = 'txtusername=' + encodeURIComponent( $( "#txtusername" ).val() ) +
             '&txtpassword=' + encodeURIComponent( $( "#txtpassword" ).val() ) +
             '&txtusertype=' + encodeURIComponent( $( "#cbousertype" ).val() ) +
@@ -114,6 +113,14 @@ function DeleteMessage() {
             }
 
         } );
+        }else{
+            $("#mismatch").css("color","#e74c3c"); 
+            $("#mismatch").css("text-align","center"); 
+            $("#mismatch").html("Password mismatch!");
+            $("#txtconfirmpassword").on("click",function(){
+                $( "#txtconfirmpassword" ).val("");
+            });
+        }
         
     }
 
