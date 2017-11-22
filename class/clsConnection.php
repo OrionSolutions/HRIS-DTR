@@ -13,7 +13,7 @@ class mycon {
 
 	//declare the mysqlpassword
 
-	public $password = '1234';
+	public $password = '';
 
 	//declare the databasename;
 

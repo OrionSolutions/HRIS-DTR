@@ -17,5 +17,6 @@ include('sessionuser.php');
 
 	$GetPosition2=$con->getrecords($SQLPos);
 	$GetDepartment2=$con->getrecords($SQL_Dep);
+	$GetTime2=$con->getrecords($SQL_Time);
 
 error_reporting(E_ERROR | E_PARSE);?>

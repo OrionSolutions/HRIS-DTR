@@ -1,7 +1,7 @@
 <?php
 include('../includes/config.php');
 
-$query="SELECT * FROM tblemployee";
+$query="select * from `tblemployee`";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();

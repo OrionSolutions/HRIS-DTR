@@ -7,14 +7,6 @@
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</div>
                     <div class="email">Human Resource Administrator</div>
-                    <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
-                        <ul class="dropdown-menu pull-right">
-                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>  
-                            <li role="seperator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <!-- #User Info -->
@@ -36,29 +28,20 @@
                         <ul class="ml-menu">
                             <li>
                                 <a href="employee.php">
-                                    <span>Employees</span>
+                                <i class="material-icons">people</i> <span>Employees Module</span>
                                 </a>
                                 <a href="time.php">
-                                    <span>Time Configuration</span>
+                                <i class="material-icons">timer</i> <span>Time Configuration Module</span>
                                 </a>
                                 <a href="department.php">
-                                    <span>Department</span>
+                                <i class="material-icons">person_add</i><span>Department Module</span>
                                 </a>
                                 <a href="position.php">
-                                    <span>Position</span>
+                                <i class="material-icons">folder</i>  <span>Position Module</span>
                                 </a>
-                                <!--
-                                <ul class="ml-menu">
-                                    <li>
-                                        <a href="#"> Basic </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Colored</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">No Header</a>
-                                    </li>
-                                </ul>-->
+                                <a href="account.php">
+                                <i class="material-icons">person</i>  <span>Account Module</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
@@ -103,7 +86,7 @@
                             </ul>
                         
                     </li>
-                    <li class="header">LABELS</li>
+                   <!-- <li class="header">Status Bar</li>
                     <li>
                         <a href="javascript:void(0);">
                             <i class="material-icons col-red">donut_large</i>
@@ -121,7 +104,7 @@
                             <i class="material-icons col-light-blue">donut_large</i>
                             <span>Information</span>
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <!-- #Menu -->

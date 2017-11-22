@@ -217,6 +217,16 @@ form.login-form {
 	right:50px;
 }
 
+.images-logo {
+	margin: 0 auto;
+	width:960px;
+}
+
+.images-logo img {
+	height: 700px;
+	width: 100%;
+}
+
 
 
 

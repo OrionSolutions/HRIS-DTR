@@ -83,7 +83,7 @@
 							<input type="text" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
 						</div>
 					<div class="col-md-4">&nbsp;
-							<a type="button" data-toggle="modal" data-target="#myModal2" href="#new-Profile" class="new-Profile sub btn btn-primary btn-block" name="btnNew">Add New User <span class="glyphicon glyphicon-pencil"></span></a>
+							<a type="button" data-toggle="modal" data-target="#myModal2" href="#new-Profile" class="new-Profile sub btn btn-primary btn-block" name="btnNew">Add New Employee <span class="glyphicon glyphicon-pencil"></span></a>
 						</div>
 					</div>
 					<div class="space-30"></div>
@@ -124,7 +124,7 @@
 					</div>
 					<div class="col-md-12" ng-show="filteredItems == 0">
 						<div class="col-md-12">
-							<h4>No Account found</h4>
+							<h4>No Employees found</h4>
 						</div>
 					</div>
 					<div class="col-md-12" ng-show="filteredItems > 0">
@@ -148,7 +148,7 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Update User</h4>
+					<h4 class="modal-title">Update Employee</h4>
 				</div>
 				<div class="modal-body">
 
@@ -236,7 +236,7 @@
 						<div class="space-10"></div>
 						<select class="form-control" id="cbotime" name="cbotime" required>
 							<option value="">[Select Time]</option>
-							<?php while($RS=mysqli_fetch_assoc($GetTime)) {?>
+							<?php while($RS=mysqli_fetch_assoc($GetTime2)) {?>
 							<option value="<?php echo $RS['TimeID'];?>">
 							<?php echo "Morning In: ". $RS['MorningIn'] . " - " . "Afternoon Out: " .$RS['AfternoonOut']; ?> |
 							<?php echo "Afternoon In : ". $RS['AfternoonIn'] . " - " . "Morning Out: " .$RS['MorningOut']; ?>
