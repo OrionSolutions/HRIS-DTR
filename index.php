@@ -114,7 +114,7 @@
             </div>
             <!-- #END# Widgets -->
             <div class="images-logo">
-            <img src="images/logo.png" height="100" class="js-animating-object img-responsive" alt="">
+           <!-- <img src="images/logo.png" height="100" class="js-animating-object img-responsive" alt="">-->
             </div>
             </div>
         </div>

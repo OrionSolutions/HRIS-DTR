@@ -83,7 +83,7 @@
                         </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="profile.php">Profile</a>
+                                    <!--<a href="profile.php">Profile</a>-->
                                     <a href="<?php echo $logoutAction ?>">Logout</a>
                                 </li>   
                             </ul>
@@ -114,7 +114,7 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2017 <a href="javascript:void(0);">Orion Solutions - Larry</a>.
+                    &copy; 2018 <a href="javascript:void(0);">Orion Solutions - Larry</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0
