@@ -227,6 +227,11 @@ form.login-form {
 	width: 100%;
 }
 
+.hideloading {
+	display:none; 
+}
+
+
 
 
 

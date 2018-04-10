@@ -52,7 +52,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="pages/ui/alerts.html">Alerts</a>
+                                <a href="generatedtr.php"><i class="material-icons">timelapse</i><span>Generate Daily Time Record</span></a>
+                            </li>   
+                            <li>
+                                <a href="generatedtr.php"><i class="material-icons">timelapse</i><span>Daily Time Record Viewer</span></a>
                             </li>   
                         </ul>
                     </li>
@@ -69,7 +72,7 @@
                                 <a href="#"><i class="material-icons">assignment</i><span>List Of Employees</span></a>
                             </li>
                             <li>
-                                <a href="#"></a>
+                            <a href="#"><i class="material-icons">assignment</i><span>List Of Tardiness Report</span></a>
                             </li>
                         </ul>
                     </li>
@@ -80,7 +83,7 @@
                         </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="account.php">Profile</a>
+                                    <a href="profile.php">Profile</a>
                                     <a href="<?php echo $logoutAction ?>">Logout</a>
                                 </li>   
                             </ul>

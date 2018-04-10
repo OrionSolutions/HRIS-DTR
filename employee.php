@@ -412,16 +412,6 @@
 
 <script type="text/javascript" src="customjs/employee.js"></script>
 	
-
-
-
-
-
-
-
-
-
-
         </div>
     </section>
 
