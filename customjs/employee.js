@@ -16,6 +16,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					var PositionID = field.PositionID;
 					var TimeID = field.TimeID;
 					var Department = field.DepartmentID;
+					var DepartmentCode = field.DepartmentCode;
 					$("#txtaccountid").val(id);
 					$( "#txtemployeecode" ).val( EmployeeCode );
 					$( "#txtlastname" ).val( Lastname );
@@ -27,7 +28,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					$("#txtaddress").val(Address);
 					$("#cbogender").val(Gender).attr('selected','selected');
 					$("#cboposition").val(PositionID).attr('selected','selected');
-					$("#cbodepartment").val(Department).attr('selected','selected');
+					$("#cbodepartment").val(DepartmentCode).attr('selected','selected');
 					$("#cbotime").val(TimeID).attr('selected','selected');;
 				} );
 			} );

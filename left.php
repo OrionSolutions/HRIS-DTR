@@ -55,7 +55,7 @@
                                 <a href="generatedtr.php"><i class="material-icons">timelapse</i><span>Generate Daily Time Record</span></a>
                             </li>   
                             <li>
-                                <a href="generatedtr.php"><i class="material-icons">timelapse</i><span>Daily Time Record Viewer</span></a>
+                                <a href="dtrviewer.php"><i class="material-icons">timelapse</i><span>Daily Time Generated DTR Viewer</span></a>
                             </li>   
                         </ul>
                     </li>

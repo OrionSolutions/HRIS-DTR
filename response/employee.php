@@ -42,7 +42,7 @@ if(isset($_POST["txtlastname"]) && strlen($_POST["txtlastname"])>0)
 	$UpdateSQL=$UpdateSQL."`Address`='".$txtaddress."',";
 	$UpdateSQL=$UpdateSQL."`Gender`='".$cbogender."',";
 	$UpdateSQL=$UpdateSQL."`PositionID`='".$cboposition."',";
-	$UpdateSQL=$UpdateSQL."`DepartmentID`='".$cbodepartment."'";
+	$UpdateSQL=$UpdateSQL."`DepartmentCode`='".$cbodepartment."'";
 	$UpdateSQL=$UpdateSQL." WHERE `EmployeeID`='".$EmployeeID."';";
 
 //echo $UpdateSQL;	
@@ -71,7 +71,7 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$cbotime= filter_var($_POST["cbotime2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbodepartment = filter_var($_POST["cbodepartment2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
 
-    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`TimeID`,`DepartmentID`)";
+    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`TimeID`,`DepartmentCode`)";
 	$SQLInsert = $SQLInsert." VALUES('".$txtemployeecode2."',";
 	$SQLInsert = $SQLInsert."'".$txtlastname."',";
 	$SQLInsert = $SQLInsert."'".$txtfirstname."',";

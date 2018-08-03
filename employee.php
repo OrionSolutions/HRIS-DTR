@@ -225,8 +225,8 @@
 						<select class="form-control" id="cbodepartment" name="cbodepartment" required>
 							<option value="">[Select Department]</option>
 							<?php while($RS=mysqli_fetch_assoc($GetDepartment2)) {?>
-							<option value="<?php echo $RS['DepartmentID'];?>">
-							<?php echo  $RS['DepartmentName']; ?>
+							<option value="<?php echo $RS['DepartmentCode'];?>">
+							<?php echo  $RS['DepartmentCode']."-".$RS['DepartmentName']; ?>
 							</option>
 							<?php } ?>
 						</select><span class="fa fa-info-circle errspan"></span>
@@ -362,8 +362,8 @@
 								<select class="form-control" id="cbodepartment2" name="cbodepartment2" required>
 									<option value="">[Select Department]</option>
                                     <?php while($RS=mysqli_fetch_assoc($GetDepartment)) {?>
-							        <option value="<?php echo $RS['DepartmentID'];?>">
-								    <?php echo  $RS['DepartmentName']; ?>
+							        <option value="<?php echo $RS['DepartmentCode'];?>">
+								    <?php echo  $RS['DepartmentCode']."-".$RS['DepartmentName']; ?>
 							        </option>
 							        <?php } ?>
 								</select><span class="fa fa-info-circle errspan"></span>
