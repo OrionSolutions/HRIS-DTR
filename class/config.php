@@ -1,7 +1,7 @@
 <?php
 ########## MySql details (Replace with yours) #############
 $username = "root"; //mysql username
-$password = "";//mysql password
+$password = "root";//mysql password
 $hostname = "localhost"; //hostname
 $databasename = 'hrisdtr'; //databasename
 
