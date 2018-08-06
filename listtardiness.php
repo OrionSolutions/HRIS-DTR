@@ -1,6 +1,6 @@
 ﻿<?php include('data/dtr.php');?>
 <!DOCTYPE html>
-<html ng-app="listdtr" lang="en">
+<html ng-app="listtardiness" lang="en">
 <head>
     <title>
 		<?php echo $title;?>
@@ -62,7 +62,7 @@
         <div class="container-fluid">
 
 
-		<div ng-controller="listdtrcrtl">
+		<div ng-controller="listtardinesscrtl">
 			<div class="wrapper wrapper-white">
 				<div class="space-20"></div>
 				<h1>List Generated DTR Module</h1>

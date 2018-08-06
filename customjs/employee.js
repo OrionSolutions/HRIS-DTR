@@ -116,6 +116,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					'&cbogender=' + encodeURIComponent( $( "#cbogender" ).val() ) +
 					'&cboposition=' + encodeURIComponent( $( "#cboposition" ).val() ) +
 					'&txtaccountid=' + encodeURIComponent( $( "#txtaccountid" ).val() ) +
+					'&cbotime=' + encodeURIComponent( $( "#cbotime" ).val() ) +
 					'&cbodepartment=' + encodeURIComponent( $( "#cbodepartment" ).val() );
 				
 				jQuery.ajax( {

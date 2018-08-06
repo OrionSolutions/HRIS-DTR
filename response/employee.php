@@ -30,6 +30,7 @@ if(isset($_POST["txtlastname"]) && strlen($_POST["txtlastname"])>0)
 	$cbogender = filter_var($_POST["cbogender"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cboposition= filter_var($_POST["cboposition"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbodepartment = filter_var($_POST["cbodepartment"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
+	$cboTimeID = filter_var($_POST["cbotime"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
 	$EmployeeID = filter_var($_POST["txtaccountid"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
     $UpdateSQL="UPDATE tblemployee SET";
 	$UpdateSQL=$UpdateSQL."`EmployeeCode`='".$txtemployeecode2."',";
@@ -42,6 +43,7 @@ if(isset($_POST["txtlastname"]) && strlen($_POST["txtlastname"])>0)
 	$UpdateSQL=$UpdateSQL."`Address`='".$txtaddress."',";
 	$UpdateSQL=$UpdateSQL."`Gender`='".$cbogender."',";
 	$UpdateSQL=$UpdateSQL."`PositionID`='".$cboposition."',";
+	$UpdateSQL=$UpdateSQL."`TimeID`='".$cboTimeID."',";
 	$UpdateSQL=$UpdateSQL."`DepartmentCode`='".$cbodepartment."'";
 	$UpdateSQL=$UpdateSQL." WHERE `EmployeeID`='".$EmployeeID."';";
 

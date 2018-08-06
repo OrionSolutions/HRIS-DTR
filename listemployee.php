@@ -1,6 +1,6 @@
-﻿<?php include('data/dtr.php');?>
+﻿<?php include('data/employee.php');?>
 <!DOCTYPE html>
-<html ng-app="listdtr" lang="en">
+<html ng-app="listemployees" lang="en">
 <head>
     <title>
 		<?php echo $title;?>
@@ -62,10 +62,10 @@
         <div class="container-fluid">
 
 
-		<div ng-controller="listdtrcrtl">
+		<div ng-controller="listofemployeecrtl">
 			<div class="wrapper wrapper-white">
 				<div class="space-20"></div>
-				<h1>List Generated DTR Module</h1>
+				<h1>List of Employees</h1>
 				<div class="space-20"></div>
 				<div class="container-fluid">
 					<div class="row">
@@ -83,7 +83,7 @@
 							<input type="text" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
 						</div>
 					<div class="col-md-4">&nbsp;
-							<input type="date" id="date1" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
+							<a type="button" class="new-Profile sub btn btn-primary btn-block" name="btnPrint">Print<span class="glyphicon glyphicon-print"></span></a>
 						</div>
 					</div>
 					<div class="space-30"></div>
@@ -92,56 +92,27 @@
 					<div class="col-md-12" ng-show="filteredItems > 0">
 						<table class="table table-striped table-bordered">
 							<thead>
-								<th>EmployeeCode :&nbsp;<a ng-click="sort_by('EmployeeID');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>EmployeeCode :&nbsp;<a ng-click="sort_by('EmployeeCode');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>Fullname :&nbsp;<a ng-click="sort_by('Fullname');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Last name :&nbsp;<a ng-click="sort_by('Lastname');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>TimeID :&nbsp;<a ng-click="sort_by('TimeID');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>First name :&nbsp;<a ng-click="sort_by('Firstname');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>Date :&nbsp;<a ng-click="sort_by('dtrDate');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Address :&nbsp;<a ng-click="sort_by('Address');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>AM IN:&nbsp;<a ng-click="sort_by('TimeInAM');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Mobile Number :&nbsp;<a ng-click="sort_by('ContactNumber');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>AM OUT :&nbsp;<a ng-click="sort_by('TimeOutAM');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Gender :&nbsp;<a ng-click="sort_by('Gender');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>AFTERNOON IN :&nbsp;<a ng-click="sort_by('TimeInPM');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>AFTERNOON OUT :&nbsp;<a ng-click="sort_by('TimeOutPM');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>OT IN :&nbsp;<a ng-click="sort_by('TimeInOT');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>OT OUT :&nbsp;<a ng-click="sort_by('TimeOutOT');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>Late Morning IN :&nbsp;<a ng-click="sort_by('LateMorning');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>Late Morning OUT :&nbsp;<a ng-click="sort_by('MorningOutLate');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>Late Afternoon IN :&nbsp;<a ng-click="sort_by('AfternoonInLate');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<th>Late Afternoon OUT :&nbsp;<a ng-click="sort_by('AfternoonOutLate');"><i class="glyphicon glyphicon-sort"></i></a>
-								</th>
-								<!--<th>Action
-								</th>-->
 							</thead>
 							<tbody>
 								<tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
-									<td>{{data.EmployeeID}}</td>
-									<td>{{data.Fullname}}</td>
-									<td>{{data.TimeID}}</td>
-									<td>{{data.dtrDate}}</td>
-									<td>{{data.TimeInAM}}</td>
-									<td>{{data.TimeOutAM}}</td>
-									<td>{{data.TimeInPM}}</td>
-									<td>{{data.TimeOutPM}}</td>
-									<td>{{data.TimeInOT}}</td>
-									<td>{{data.TimeOutOT}}</td>
-									<td>{{data.LateMorning}}</td>
-									<td>{{data.MorningOutLate}}</td>
-									<td>{{data.AfternoonInLate}}</td>
-									<td>{{data.AfternoonOutLate}}</td>
-									<!--<td><a type="button" data-toggle="modal" data-target="#myModal" data-id="{{data.EmployeeID}}" href="#open-Profile" class="open-Profile sub btn btn-primary btn-block" name="btnEdit">Edit <span class="glyphicon glyphicon-pencil"></span></a>
-									<a type="button" data-id="{{data.EmployeeID}}" href="#close-Profile" class="close-Profile sub btn btn-warning btn-block" name="btnEdit">Delete <span class="glyphicon glyphicon-alert"></span></a>
-									</td>-->
+									<td>{{data.EmployeeCode}}</td>
+									<td>{{data.Lastname}}</td>
+									<td>{{data.Firstname}}</td>
+									<td>{{data.Address}}</td>
+									<td>{{data.ContactNumber}}</td>
+									<td>{{data.Gender}}</td>
 								</tr>
 							</tbody>
 						</table>
@@ -163,6 +134,7 @@
 	</div>
 
 
+	
 <script type="text/javascript" src="customjs/employee.js"></script>
 	
         </div>

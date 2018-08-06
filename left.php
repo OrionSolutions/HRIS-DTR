@@ -69,10 +69,10 @@
                                 <a href="#"><i class="material-icons">assignment</i><span>Daily Time Records Report</span></a>
                             </li>
                             <li>
-                                <a href="#"><i class="material-icons">assignment</i><span>List Of Employees</span></a>
+                                <a href="listemployee.php"><i class="material-icons">assignment</i><span>List Of Employees</span></a>
                             </li>
                             <li>
-                            <a href="#"><i class="material-icons">assignment</i><span>List Of Tardiness Report</span></a>
+                            <a href="listtardiness.php"><i class="material-icons">assignment</i><span>List Of Tardiness Report</span></a>
                             </li>
                         </ul>
                     </li>
