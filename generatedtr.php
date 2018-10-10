@@ -97,14 +97,6 @@
 				</div>
 			</div>
 
-
-
-
-
-
-
-
-
 <div id="mydata" ng-controller="listdtrcrtl">
 			<div class="wrapper wrapper-white">
 				<div class="space-20"></div>
@@ -203,31 +195,11 @@
 				</div>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </div>
-
     </section>
-
-
-
-
- <?php include('bottom.php');?>
-
- <script type="text/javascript" src="customjs/generatedtr.js"></script>
-	<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+<?php include('bottom.php');?>
+<script type="text/javascript" src="customjs/generatedtr.js"></script>
+<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
 <script src="js/vendor/jquery.ui.widget.js"></script>
 <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
 <script src="js/jquery.iframe-transport.js"></script>
@@ -263,5 +235,4 @@ $(function () {
 });
 </script>
 </body>
-
 </html>
