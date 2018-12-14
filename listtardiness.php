@@ -65,7 +65,7 @@
 		<div ng-controller="listtardinesscrtl">
 			<div class="wrapper wrapper-white">
 				<div class="space-20"></div>
-				<h1>List Generated DTR Module</h1>
+				<h1>Tardiness Report Detailed</h1>
 				<div class="space-20"></div>
 				<div class="container-fluid">
 					<div class="row">
@@ -79,14 +79,34 @@
 							</select>
 						</div>
 		
-						<div class="col-md-4">&nbsp;
-							<input type="text" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
+
+						<form action="reports/rpt_listtardiness.php" method="get" target="_blank">	
+						
+						<div class="col-md-10">&nbsp;
+							<input type="text" ng-model="search" id="txtsearch" name="txtsearch" ng-change="filter()" placeholder="Search" class="form-control"/>
+							<div class="space-30"></div>
+						</div>	
+						<div class="row" style="padding:15px;">
+							<div class="col-md-3">Select Type &nbsp;
+									<select id="type" name="type" class="form-control">
+									<option value="All">All</option>
+									<option value="Count">By Tardiness Count</option>
+									<option value="Detailed">By Tardiness Detailed</option>
+									</select>
+							</div>
+							<div class="col-md-3">StartDate &nbsp;
+									<input type="date" id="startDate" name="startDate"  placeholder="Search" class="form-control"/>
+							</div>
+							<div class="col-md-3">EndDate&nbsp;
+		m,						<input type="date" id="endDate" name="endDate"  placeholder="Search" class="form-control"/>
+							</div>
+							<div class="col-md-3">&nbsp;
+								<button type="submit" class="new-Profile sub btn btn-primary btn-block" name="btnPrint">Print<span class="glyphicon glyphicon-print"></span></a>
+							</div>
 						</div>
-					<div class="col-md-4">&nbsp;
-							<input type="date" id="date1" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
-						</div>
-					</div>
-					<div class="space-30"></div>
+						</form>
+						<div class="space-30"></div>
+					
 				</div>
 				<div class="row">
 					<div class="col-md-12" ng-show="filteredItems > 0">

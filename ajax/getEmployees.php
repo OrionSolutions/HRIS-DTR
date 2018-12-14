@@ -1,7 +1,9 @@
 <?php
 include('../includes/config.php');
 
-$query="select * from `tblemployee`";
+$query="SELECT * FROM `tblemployee`
+INNER JOIN `tbldepartment`
+ON `tbldepartment`.`DepartmentCode` = `tblemployee`.`DepartmentCode`";
 $result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
 $arr = array();

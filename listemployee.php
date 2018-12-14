@@ -78,13 +78,14 @@
 								<option>100</option>
 							</select>
 						</div>
-		
+						<form action="reports/rpt_listemployee.php" method="get" target="_blank">
 						<div class="col-md-4">&nbsp;
-							<input type="text" ng-model="search" ng-change="filter()" placeholder="Search" class="form-control"/>
+							<input type="text" ng-model="search" id="txtsearch" name="txtsearch" ng-change="filter()" placeholder="Type your Department" class="form-control"/>
 						</div>
 					<div class="col-md-4">&nbsp;
-							<a type="button" class="new-Profile sub btn btn-primary btn-block" name="btnPrint">Print<span class="glyphicon glyphicon-print"></span></a>
+							<button type="submit" class="new-Profile sub btn btn-primary btn-block" name="btnPrint">Print<span class="glyphicon glyphicon-print"></span></a>
 						</div>
+						</form>
 					</div>
 					<div class="space-30"></div>
 				</div>
@@ -98,6 +99,8 @@
 								</th>
 								<th>First name :&nbsp;<a ng-click="sort_by('Firstname');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
+								<th>Department :&nbsp;<a ng-click="sort_by('DepartmentName');"><i class="glyphicon glyphicon-sort"></i></a>
+								</th>
 								<th>Address :&nbsp;<a ng-click="sort_by('Address');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
 								<th>Mobile Number :&nbsp;<a ng-click="sort_by('ContactNumber');"><i class="glyphicon glyphicon-sort"></i></a>
@@ -110,6 +113,7 @@
 									<td>{{data.EmployeeCode}}</td>
 									<td>{{data.Lastname}}</td>
 									<td>{{data.Firstname}}</td>
+									<td>{{data.DepartmentName}}</td>
 									<td>{{data.Address}}</td>
 									<td>{{data.ContactNumber}}</td>
 									<td>{{data.Gender}}</td>
