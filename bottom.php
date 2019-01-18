@@ -1,8 +1,8 @@
    <!-- Jquery Core Js -->
-   <script src="plugins/jquery/jquery.min.js"></script>
-
+   <!-- <script src="plugins/jquery/jquery.min.js"></script> -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" integrity="sha384-xBuQ/xzmlsLoJpyjoggmTEz8OWUFM0/RC5BsqQBDX2v5cMvDHcMakNTNrHIW2I5f" crossorigin="anonymous"></script>
     <!-- Bootstrap Core Js -->
-    <script src="plugins/bootstrap/js/bootstrap.js"></script>
+   <!-- <script src="plugins/bootstrap/js/bootstrap.js"></script> -->
 
     <!-- Select Plugin Js -->
   <!--  <script src="plugins/bootstrap-select/js/bootstrap-select.js"></script> -->

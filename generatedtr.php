@@ -67,13 +67,17 @@
 					<h1>DTR Generation</h1>
 						<form>
 							<div class="col-lg-6">
-							<span class="btn btn-success fileinput-button">
-        <input id="fileupload" type="file" name="files[]">
+		    <!-- The fileinput-button span is used to style the file input field as button -->
+			<span class="btn btn-success fileinput-button">
+        <i class="glyphicon glyphicon-plus"></i>
+        <span>Select files...</span>
+        <!-- The file input field used as target for the file upload widget -->
+        <input id="fileupload" type="file" name="files[]" multiple>
     </span>
     <div class="space-30"></div>
 
-    <!-- The global progress bar -->
-    <div id="progress" class="progress">
+  <!-- The global progress bar -->
+  <div id="progress" class="progress">
         <div class="progress-bar progress-bar-success"></div>
     </div>
     <!-- The container for the uploaded files -->
@@ -205,8 +209,9 @@
 <script src="js/jquery.iframe-transport.js"></script>
 <!-- The basic File Upload plugin -->
 <script src="js/jquery.fileupload.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script type="text/javascript">
+<!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
 /*jslint unparam: true */
 /*global window, $ */
 $(function () {
@@ -220,7 +225,7 @@ $(function () {
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
 				$('#files').empty();
-				$('<p/>').text(file.name).appendTo('#files');
+                $('<p/>').text(file.name).appendTo('#files');
             });
         },
         progressall: function (e, data) {

@@ -9,11 +9,11 @@ class mycon {
 
 	//declare the mysqlusername
 
-	public $username = 'roots';
+	public $username = 'root';
 
 	//declare the mysqlpassword
 
-	public $password = 'roots';
+	public $password = 'root';
 
 	//declare the databasename;
 
