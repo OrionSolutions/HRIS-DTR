@@ -94,6 +94,8 @@
 							<thead>
 								<th>EmployeeCode :&nbsp;<a ng-click="sort_by('EmployeeCode');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
+								<th>Biometri ID :&nbsp;<a ng-click="sort_by('BiometricID');"><i class="glyphicon glyphicon-sort"></i></a>
+								</th>
 								<th>Last name :&nbsp;<a ng-click="sort_by('Lastname');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
 								<th>First name :&nbsp;<a ng-click="sort_by('Firstname');"><i class="glyphicon glyphicon-sort"></i></a>
@@ -110,6 +112,7 @@
 							<tbody>
 								<tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 									<td>{{data.EmployeeCode}}</td>
+									<td>{{data.BiometricID}}</td>
 									<td>{{data.Lastname}}</td>
 									<td>{{data.Firstname}}</td>
 									<td>{{data.Address}}</td>
@@ -156,10 +159,14 @@
 					<div class="space-20"></div>
 					<div class="container">
 						<form id="updateform">
-						<div class="col-lg-12">
+						<div class="col-lg-6">
 						<div class="space-10"></div>
 						<input type="text" class="form-control" placeHolder="Employee Code" id="txtemployeecode" name="txtemployeecode" required><span class="fa fa-info-circle errspan"></span>
-					</div>
+						</div>
+						<div class="col-lg-6">
+						<div class="space-10"></div>
+						<input type="text" class="form-control" placeHolder="Biometric ID" id="txtbiometricid" name="txtbiometricid" required><span class="fa fa-info-circle errspan"></span>
+						</div>
 
 					<div class="col-lg-4">
 						<div class="space-10"></div>
@@ -292,9 +299,14 @@
 					<div class="container">
 						<form id="saveform">
 						
-							<div class="col-lg-12">
+							<div class="col-lg-6">
 								<div class="space-10"></div>
 								<input type="text" class="form-control" placeHolder="Employee Code" id="txtemployeecode2" name="txtemployeecode2" required><span class="fa fa-info-circle errspan"></span>
+							</div>
+
+							<div class="col-lg-6">
+								<div class="space-10"></div>
+								<input type="text" class="form-control" placeHolder="Biometric ID" id="txtbiometricid2" name="txtbiometricid2" required><span class="fa fa-info-circle errspan"></span>
 							</div>
 
 							<div class="col-lg-4">

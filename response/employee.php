@@ -27,6 +27,7 @@ if(isset($_POST["txtlastname"]) && strlen($_POST["txtlastname"])>0)
 	$txtmobilenumber =filter_var($_POST["txtmobilenumber"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$txtbirthdate =filter_var($_POST["txtbirthdate"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	$txtaddress= filter_var($_POST["txtaddress"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
+	$txtbiometricid= filter_var($_POST["txtbiometricid"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbogender = filter_var($_POST["cbogender"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cboposition= filter_var($_POST["cboposition"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbodepartment = filter_var($_POST["cbodepartment"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
@@ -34,6 +35,7 @@ if(isset($_POST["txtlastname"]) && strlen($_POST["txtlastname"])>0)
 	$EmployeeID = filter_var($_POST["txtaccountid"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
     $UpdateSQL="UPDATE tblemployee SET";
 	$UpdateSQL=$UpdateSQL."`EmployeeCode`='".$txtemployeecode2."',";
+	$UpdateSQL=$UpdateSQL."`BiometricID`='".$txtbiometricid."',";
 	$UpdateSQL=$UpdateSQL."`Lastname`='".$txtlastname."',";
 	$UpdateSQL=$UpdateSQL."`Firstname`='".$txtfirstname."',";
 	$UpdateSQL=$UpdateSQL."`Middlename`='".$txtmiddlename."',";
@@ -66,6 +68,7 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$txtmiddlename = filter_var($_POST["txtmiddlename2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	$cbocivilstatus = filter_var($_POST["cbocivilstatus2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);    
 	$txtmobilenumber =filter_var($_POST["txtmobilenumber2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
+	$txtbiometricid= filter_var($_POST["txtbiometricid2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$txtbirthdate =filter_var($_POST["txtbirthdate2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
 	$txtaddress= filter_var($_POST["txtaddress2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbogender = filter_var($_POST["cbogender2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
@@ -73,7 +76,7 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$cbotime= filter_var($_POST["cbotime2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH); 
 	$cbodepartment = filter_var($_POST["cbodepartment2"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);   
 
-    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`TimeID`,`DepartmentCode`)";
+    $SQLInsert ="INSERT INTO `tblemployee`(`EmployeeCode`,`Lastname`,`Firstname`,`Middlename`,`CivilStatus`,`ContactNumber`,`Birthdate`,`Address`,`Gender`,`PositionID`,`TimeID`,`BiometricID`,`DepartmentCode`)";
 	$SQLInsert = $SQLInsert." VALUES('".$txtemployeecode2."',";
 	$SQLInsert = $SQLInsert."'".$txtlastname."',";
 	$SQLInsert = $SQLInsert."'".$txtfirstname."',";
@@ -85,6 +88,7 @@ if(isset($_POST["txtemployeecode2"]) && strlen($_POST["txtemployeecode2"])>0)
 	$SQLInsert = $SQLInsert."'".$cbogender."',";	
 	$SQLInsert = $SQLInsert."'".$cboposition."',";		
 	$SQLInsert = $SQLInsert."'".$cbotime."',";
+	$SQLInsert = $SQLInsert."'".$txtbiometricid."',";
 	$SQLInsert = $SQLInsert."'".$cbodepartment."');";
 	$RSInsert=$con->getrecords($SQLInsert);
 }else{

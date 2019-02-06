@@ -10,6 +10,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					var Middlename = field.Middlename;
 					var CivilStatus = field.CivilStatus;
 					var MobileNumber = field.ContactNumber;
+					var BiometricID = field.BiometricID;
 					var Birthdate = field.Birthdate;
 					var Address = field.Address;
 					var Gender = field.Gender;
@@ -24,6 +25,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					$( "#txtmiddlename" ).val( Middlename );
 					$( "#cbocivilstatus" ).val( CivilStatus );
 					$( "#txtmobilenumber" ).val( MobileNumber );
+					$("#txtbiometricid").val(BiometricID);
 					$( "#txtbirthdate" ).val( Birthdate );
 					$("#txtaddress").val(Address);
 					$("#cbogender").val(Gender).attr('selected','selected');
@@ -114,6 +116,7 @@ $( document ).on( "click", ".open-Profile", function () {
 					'&txtbirthdate=' + encodeURIComponent( $( "#txtbirthdate" ).val() ) +
 					'&txtaddress=' + encodeURIComponent( $( "#txtaddress" ).val() ) +
 					'&cbogender=' + encodeURIComponent( $( "#cbogender" ).val() ) +
+					'&txtbiometricid=' + encodeURIComponent( $( "#txtbiometricid" ).val() ) +
 					'&cboposition=' + encodeURIComponent( $( "#cboposition" ).val() ) +
 					'&txtaccountid=' + encodeURIComponent( $( "#txtaccountid" ).val() ) +
 					'&cbotime=' + encodeURIComponent( $( "#cbotime" ).val() ) +
@@ -177,6 +180,7 @@ $( document ).on( "click", ".open-Profile", function () {
 				'&txtbirthdate2=' + encodeURIComponent( $( "#txtbirthdate2" ).val() ) +
 				'&txtaddress2=' + encodeURIComponent( $( "#txtaddress2" ).val() ) +
 				'&cbogender2=' + encodeURIComponent( $( "#cbogender2" ).val() ) +
+				'&txtbiometricid2=' + encodeURIComponent( $( "#txtbiometricid2" ).val() ) +
 				'&cboposition2=' + encodeURIComponent( $( "#cboposition2" ).val() ) +
 				'&cbotime2=' + encodeURIComponent( $( "#cbotime2" ).val() ) +
 				'&cbodepartment2=' + encodeURIComponent( $( "#cbodepartment2" ).val() );
