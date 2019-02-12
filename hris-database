@@ -665,7 +665,7 @@ insert  into `tblemployee`(`EmployeeID`,`EmployeeCode`,`BiometricID`,`Lastname`,
 (439,'00331',69,'Pajiji','Norceda','O.','1989-04-07',NULL,'ZCP008','Female',1,'Married',21,'Sta. Catalina Z.C','0555',NULL,0,3),
 (440,'0433',NULL,'Pang-an','Ma. Ruffa','G.','1989-10-23',NULL,'ZCP04','Female',1,'Married',21,'Sta. Catalina Z.C','555',NULL,0,3),
 (441,'00303',NULL,'Pelito','Francisco Jr.','L.','1971-10-14',NULL,'ZCP04','Male',1,'Married',21,'Talon-talon Z.C','555',NULL,0,3),
-(442,'00452',452,'Singah','Lamprey','I.','1977-09-19',NULL,'ZCP09','Male',1,'Married',21,'Sta. Barbara Z.C','0555',NULL,0,3),
+(442,'465',21,'Singah','Lamprey','I.','1977-09-19',NULL,'ZCP09','Male',1,'Married',21,'Sta. Barbara Z.C','0555',NULL,0,3),
 (443,'00470',26,'Somocor','Kriselle Doll','B.','1999-03-27',NULL,'ZCP09','Female',1,'Single',21,'Divisoria Z.C','555',NULL,0,1);
 
 /*Table structure for table `tblholiday` */
