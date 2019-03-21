@@ -9,7 +9,7 @@ IF((TIME_TO_SEC(TIMEDIFF(`tmpdtr`.`TimeInPM`,`tbltimeconfiguration`.`AfternoonIn
 IF((TIME_TO_SEC(TIMEDIFF(`tbltimeconfiguration`.`AfternoonOut`,`tmpdtr`.`TimeOutPM`))/3600) < 0,0,TIMEDIFF(`tbltimeconfiguration`.`AfternoonOut`,`tmpdtr`.`TimeOutPM`)) AS AfternoonOutLate
 FROM `tmpdtr`
 INNER JOIN `tblemployee`
-ON `tmpdtr`.`EmployeeID` = `tblemployee`.`EmployeeCode`
+ON `tmpdtr`.`EmployeeID` = tblemployee.`BiometricID`
 INNER JOIN `tbltimeconfiguration`
 ON `tbltimeconfiguration`.`TimeID` = `tblemployee`.`TimeID`
 WHERE IF((TIME_TO_SEC(TIMEDIFF(`tmpdtr`.`TimeInAM`,`tbltimeconfiguration`.`MorningIn`))/3600) < 0,0,TIMEDIFF(`tmpdtr`.`TimeInAM`,`tbltimeconfiguration`.`MorningIn`)) <> 0 OR
