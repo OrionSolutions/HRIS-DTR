@@ -224,8 +224,6 @@ $(function () {
         dataType: 'json',
         done: function (e, data) {
             $.each(data.result.files, function (index, file) {
-				alert('test');
-				//$('#files').empty();
 				$('<p/>').text(file.name).appendTo('#files');
             });
         },
