@@ -1,5 +1,6 @@
-$("#mydata").hide();
+//$("#mydata").hide();
  $("#btngenerate").click(function () { 
+	$("#mydata").hide();
 	$("#LoadingImages").show();
 	$("#btngenerate").attr('disabled',true);
 	$("#btngenerate").attr('disabled',true).css({'background-color':'grey'});	
@@ -21,8 +22,6 @@ $("#mydata").hide();
 			dataType: "text",
 			data: myData,
 			success: function ( response ) {
-
-				console.log(response);
 				$("#mydata").show(2000);
 				$("#LoadingImages").hide(); //hide loading image			
 			},

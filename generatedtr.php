@@ -91,7 +91,7 @@
 						</form>
 					</div>
 					<div class="row">
-							<div class="col-lg-12">
+							<div class="col-lg-12" style="text-align:center;">
 							<h3><img src="images/loading.gif" height="48" id="LoadingImages" alt="" class="hideloading" /></h3>
 								<div id="datavalue">
 
