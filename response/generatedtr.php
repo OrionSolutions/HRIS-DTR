@@ -20,7 +20,10 @@ if ($TypeID=="UploadData") {
 if(isset($_POST["filepath"]) && strlen($_POST["filepath"])>0) 
 {	 
 	$filepath = filter_var($_POST["filepath"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
-	
+	$txtStart = filter_var($_POST["startDate"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+	$txtEnd = filter_var($_POST["endDate"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+	//$txtStart=date_format($txtStart,"Y-m-d");
+	//$txtEnd=date_format($txtEnd,"Y-m-d");
 $exec = "DELETE FROM tblimportdtr;";
 $RSInsert=$con->getrecords($exec);
 $exec = "DELETE FROM tmpdtr;";
@@ -30,13 +33,13 @@ $exec= "LOAD DATA INFILE '". $ss . "/server/php/" . "files/" .$filepath."' INTO 
 FIELDS TERMINATED BY '\t'
 (tblimportdtr.`EmployeeCode`,`tblimportdtr`.`importdtr_date`,`tblimportdtr`.`device_id`,`tblimportdtr`.`time_in`,`tblimportdtr`.`time_out`,`tblimportdtr`.`unknown`);";
 $RSInsert=$con->getrecords($exec);
-$exec ="CALL spGenerateDTR('2019-03-01','2019-03-31');";
+$exec ="CALL spGenerateDTR('".$txtStart."','".$txtEnd."');";
 $result = mysqli_query($cons, 
-$exec) or die("Query fail: " . mysqli_error());
-$exec = "CALL RecomputeTmpDtr(1,1);";
+$exec);
 echo $exec;	
-$result2 = mysqli_query($cons, 
-$exec) or die("Query fail: " . mysqli_error());
+//$execs = "CALL RecomputeTmpDtr(1,1);";
+//$result2 = mysqli_query($cons2, 
+//$execs);
 
 }else{
 		header('HTTP/1.1 500 Error!');

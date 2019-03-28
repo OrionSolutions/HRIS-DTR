@@ -66,7 +66,7 @@
 					<div class="row">
 					<h1>DTR Generation</h1>
 						<form>
-							<div class="col-lg-6">
+							<div class="col-lg-3">
 		    <!-- The fileinput-button span is used to style the file input field as button -->
 			<span class="btn btn-success fileinput-button">
         <i class="glyphicon glyphicon-plus"></i>
@@ -84,10 +84,16 @@
     <div id="files" class="files"></div>
 
 							</div>
-				
-							<div class="col-lg-6">
+							<div class="col-lg-3">
+							<input type="date" class="form-control" placeHolder="Start Date" id="txtStart" name="txtStart" required><span class="fa fa-info-circle errspan"></span>
+							</div>
+							<div class="col-lg-3">
+							<input type="date" class="form-control" placeHolder="End Date" id="txtEnd" name="txtEnd" required><span class="fa fa-info-circle errspan"></span>
+							</div>
+							<div class="col-lg-3">
 							<button class="btn btn-lg btn-success btn-block" id="btngenerate">Generate DTR</button>
 							</div>
+							
 						</form>
 					</div>
 					<div class="row">
