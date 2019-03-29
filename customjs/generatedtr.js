@@ -16,16 +16,36 @@
 			var myData = 'filepath=' + encodeURIComponent(d) +
 			'&startDate=' + encodeURIComponent(d1) +
 			'&endDate=' + encodeURIComponent(d2);
-		alert(myData);
 		jQuery.ajax( {
 			type: "POST",
 			url: "response/generatedtr.php?TypeID=UploadData",
 			dataType: "text",
 			data: myData,
 			success: function ( response ) {
-				alert(response);
-				$("#mydata").show(2000);
-				$("#LoadingImages").hide(); //hide loading image			
+				$("#mydata").hide(2000);
+				ImportedMessage();
+				if($.trim(response==1)) {
+					jQuery.ajax( {
+						type: "POST",
+						url: "response/generatedtr.php?TypeID=RecomputeDTR",
+						dataType: "text",
+						data: myData,
+						success: function ( response ) {
+							$("#mydata").show(2000);
+							$("#LoadingImages").hide(); //hide loading image		
+							ComputedMessage();
+							setTimeout(() => {
+								location.reload();		
+							}, 5000);
+
+						},
+			
+						error: function ( xhr, ajaxOptions, thrownError ) {
+							alert( thrownError );
+						}
+			
+					} );
+				}			
 			},
 
 			error: function ( xhr, ajaxOptions, thrownError ) {
@@ -35,3 +55,22 @@
 		} );
 
 });
+
+function ImportedMessage() {
+	swal( {
+		title: "Imported Successfully!",
+		text: "Data will now Auto Compute the regular and OT hours.",
+		type: "success",
+		timer: 5000
+	} );
+}
+
+
+function ComputedMessage() {
+	swal( {
+		title: "Auto Compute Successfully!",
+		text: "Page will now refresh in 3 seconds.",
+		type: "success",
+		timer: 3000
+	} );
+}

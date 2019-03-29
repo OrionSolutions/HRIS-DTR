@@ -188,7 +188,7 @@ app.controller('listdtrcrtl', function ($scope, $http, $timeout) {
     $http.get('ajax/getDTR.php').success(function(data){
         $scope.list = data;
         $scope.currentPage = 1; //current page
-        $scope.entryLimit = 20; //max no of items to display in a page
+        $scope.entryLimit = 1500; //max no of items to display in a page
         $scope.filteredItems = $scope.list.length; //Initially for no filter  
         $scope.totalItems = $scope.list.length;
     });

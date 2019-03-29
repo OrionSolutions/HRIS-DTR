@@ -98,7 +98,7 @@
 					</div>
 					<div class="row">
 							<div class="col-lg-12" style="text-align:center;">
-							<h3><img src="images/loading.gif" height="48" id="LoadingImages" alt="" class="hideloading" /></h3>
+							<h3><img src="images/loading.gif" height="350" width="250" id="LoadingImages" alt="" class="hideloading" /></h3>
 								<div id="datavalue">
 
 								</div>
@@ -141,7 +141,7 @@
 								</th>
 								<th>Fullname :&nbsp;<a ng-click="sort_by('Fullname');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
-								<th>TimeID :&nbsp;<a ng-click="sort_by('TimeID');"><i class="glyphicon glyphicon-sort"></i></a>
+								<th>Schedule :&nbsp;<a ng-click="sort_by('TimeID');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
 								<th>Date :&nbsp;<a ng-click="sort_by('dtrDate');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
@@ -165,6 +165,10 @@
 								</th>
 								<th>Late Afternoon OUT :&nbsp;<a ng-click="sort_by('AfternoonOutLate');"><i class="glyphicon glyphicon-sort"></i></a>
 								</th>
+								<th>Regular Hours :&nbsp;<a ng-click="sort_by('RegularHour');"><i class="glyphicon glyphicon-sort"></i></a>
+								</th>
+								<th>OT Hours :&nbsp;<a ng-click="sort_by('OTHour');"><i class="glyphicon glyphicon-sort"></i></a>
+								</th>
 								<!--<th>Action
 								</th>-->
 							</thead>
@@ -172,7 +176,7 @@
 								<tr ng-repeat="data in filtered = (list | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
 									<td>{{data.EmployeeID}}</td>
 									<td>{{data.Fullname}}</td>
-									<td>{{data.TimeID}}</td>
+									<td>{{data.Schedule}}</td>
 									<td>{{data.dtrDate}}</td>
 									<td>{{data.TimeInAM}}</td>
 									<td>{{data.TimeOutAM}}</td>
@@ -184,9 +188,11 @@
 									<td>{{data.MorningOutLate}}</td>
 									<td>{{data.AfternoonInLate}}</td>
 									<td>{{data.AfternoonOutLate}}</td>
-									<!--<td><a type="button" data-toggle="modal" data-target="#myModal" data-id="{{data.EmployeeID}}" href="#open-Profile" class="open-Profile sub btn btn-primary btn-block" name="btnEdit">Edit <span class="glyphicon glyphicon-pencil"></span></a>
+									<td>{{data.RegularHour}}</td>
+									<td>{{data.OTHour}}</td>
+									<td><a type="button" data-toggle="modal" data-target="#myModal" data-id="{{data.EmployeeID}}" href="#open-Profile" class="open-Profile sub btn btn-primary btn-block" name="btnEdit">Edit <span class="glyphicon glyphicon-pencil"></span></a>
 									<a type="button" data-id="{{data.EmployeeID}}" href="#close-Profile" class="close-Profile sub btn btn-warning btn-block" name="btnEdit">Delete <span class="glyphicon glyphicon-alert"></span></a>
-									</td>-->
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -205,6 +211,158 @@
 				</div>
 			</div>
 		</div>
+
+
+
+		    <!-- Modal Update -->
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Update Time Details</h4>
+				</div>
+				<div class="modal-body">
+
+					<div class="space-20"></div>
+					<div class="container">
+						<form id="updateform">
+							<div class="col-lg-12">
+								<div class="col-lg-3">
+									<div class="space-10"></div>
+									<label>Morning In</label>
+									<input type="time" class="form-control" placeHolder="Morning In" id="txtMorningIn" name="txtMorningIn" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="col-lg-3">
+									<div class="space-10"></div>
+									<label>Morning Out</label>
+									<input type="time" class="form-control" placeHolder="Morning Out" id="txtMorningOut" name="txtMorningOut" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="col-lg-3">
+									<div class="space-10"></div>
+									<label>Afternoon In</label>
+									<input type="time" class="form-control" placeHolder="Afternoon In" id="txtAfternoonIn" name="txtAfternoonIn" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="col-lg-3">
+									<div class="space-10"></div>
+									<label>Afternoon Out</label>
+									<input type="time" class="form-control" placeHolder="Afternoon Out" id="txtAfternoonOut" name="txtAfternoonOut" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+								<div class="col-lg-6">
+								<div class="space-10"></div>
+									<label>Overtime In</label>
+									<input type="time" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeIn" name="txtOvertimeIn" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="col-lg-6">
+								<div class="space-10"></div>
+									<label>Overtime Out</label>
+									<input type="time" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeOut" name="txtOvertimeOut" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+							</div>
+							<div class="col-lg-12">
+								<div class="col-lg-6">
+								<div class="space-10"></div>
+									<label>Regular Hour</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtRegularHour" name="txtRegularHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="col-lg-6">
+								<div class="space-10"></div>
+									<label>Overtime Hour</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+							</div>
+
+							<div class="col-lg-12">
+									<div class="col-lg-4">
+									<div class="space-10"></div>
+										<label>ROT</label>
+										<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtRegularHour" name="txtRegularHour" required><span class="fa fa-info-circle errspan"></span>
+									</div>
+									<div class="col-lg-4">
+									<div class="space-10"></div>
+										<label>ND</label>
+										<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+									</div>
+									<div class="col-lg-4">
+									<div class="space-10"></div>
+										<label>RS</label>
+										<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+									</div>
+							</div>
+
+							<div class="col-lg-12">	
+								<div class="col-lg-4">
+								<div class="space-10"></div>
+									<label>SOT</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<label>Snd</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<label>LHR</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+							</div>
+
+							<div class="col-lg-12">	
+								<div class="col-lg-4">
+								<div class="space-10"></div>
+									<label>LHnd</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<label>SLH</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<label>Shot</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+							</div>
+
+							<div class="col-lg-12">	
+								<div class="col-lg-4">
+								<div class="space-10"></div>
+									<label>Shnd</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<label>NP</label>
+									<input type="number" class="form-control" placeHolder="Afternoon Out" id="txtOvertimeHour" name="txtOvertimeHour" required><span class="fa fa-info-circle errspan"></span>
+								</div>
+								<div class="space-10"></div>
+									<input type="hidden" id="tmpdtrid" name="tmpdtrid" value="">
+									<button class="btn btn-success btn-lg btn-block" id="btnUpdate" name="btnUpdate"><i class="fa fa-envelope"></i> Update</button>
+								</div>
+							</div>
+		
+				
+							<div class="col-lg-3">
+							
+							</div>
+
+						</form>
+					</div>
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+				<p id="test"></p>
+			</div>
+		</div>
+	</div>
+
+
+		
         </div>
     </section>
 <?php include('bottom.php');?>
