@@ -56,7 +56,10 @@
                             </li>   
                             <li>
                                 <a href="dtrviewer.php"><i class="material-icons">timelapse</i><span>Daily Time Generated DTR Viewer</span></a>
-                            </li>   
+                            </li>
+                            <li>
+                                <a href="postdtr.php"><i class="material-icons">timelapse</i><span>Post DTR to Payroll</span></a>
+                            </li>
                         </ul>
                     </li>
                     <li>

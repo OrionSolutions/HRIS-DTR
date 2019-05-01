@@ -12,7 +12,7 @@ IF((TIME_TO_SEC(TIMEDIFF(`tbltimeconfiguration`.`AfternoonOut`,`tmpdtr`.`TimeOut
 `tmpdtr`.`OTHour`
 FROM `tmpdtr`
 INNER JOIN `tblemployee`
-ON `tmpdtr`.`EmployeeID` = `tblemployee`.`EmployeeCode`
+ON `tmpdtr`.`EmployeeID` = `tblemployee`.`BiometricID`
 INNER JOIN `tbltimeconfiguration`
 ON `tbltimeconfiguration`.`TimeID` = `tblemployee`.`TimeID`
 ORDER BY EmployeeID";

@@ -56,6 +56,49 @@
 
 });
 
+
+
+$("#btnPost").click(function () {
+    $("#LoadingImages").show();
+    $("#btnPost").attr('disabled',true);
+    $("#btnPost").attr('disabled',true).css({'background-color':'grey'});
+
+    var d1 = $("#txtStart").val();
+    var d2 = $("#txtEnd").val();
+    var myData = 'salary_type=' + encodeURIComponent($("#cboSalaryType").val()) +
+        '&startDate=' + encodeURIComponent(d1) +
+        '&endDate=' + encodeURIComponent(d2);
+    jQuery.ajax( {
+        type: "POST",
+        url: "response/generatedtr.php?TypeID=UploadPayroll",
+        dataType: "text",
+        data: myData,
+        success: function ( response ) {
+        	console.log(response);
+            PostedMessage();
+            $("#LoadingImages").hide(); //hide loading image
+            setTimeout(() => {
+                //location.reload();
+            }, 5000);
+        },
+
+        error: function ( xhr, ajaxOptions, thrownError ) {
+            alert( thrownError );
+        }
+
+    } );
+
+});
+
+function PostedMessage() {
+    swal( {
+        title: "DTR Posted Successfully!",
+        text: "Data will now Auto Compute the regular and OT hours.",
+        type: "success",
+        timer: 5000
+    } );
+}
+
 function ImportedMessage() {
 	swal( {
 		title: "Imported Successfully!",

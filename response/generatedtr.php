@@ -46,6 +46,24 @@ if ($TypeID=="UploadData") {
 		}
 	}
 
+if ($TypeID=="UploadPayroll") {
+    if(isset($_POST["startDate"]) && strlen($_POST["startDate"])>0)
+    {
+        $salary_type = filter_var($_POST["salary_type"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $txtStart = filter_var($_POST["startDate"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $txtEnd = filter_var($_POST["endDate"],FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_HIGH);
+        $exec ="CALL spPostPayroll('".$salary_type."','".$txtStart."','".$txtEnd."');";
+        $result = mysqli_query($cons,
+            $exec);
+        $done = 1;
+        echo $exec;
+
+    }else{
+        header('HTTP/1.1 500 Error!');
+        exit();
+    }
+}
+
 	if ($TypeID=="RecomputeDTR") { 
 		$execs = "CALL RecomputeTmpDtr(1,1);";
 		$result = mysqli_query($cons2, $execs);
